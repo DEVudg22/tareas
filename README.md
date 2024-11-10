@@ -1,0 +1,2 @@
+# tareas
+CRUD en NextJS
