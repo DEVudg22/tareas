@@ -3,7 +3,7 @@ export default function Footer() {
     <div className="footer-bottom">
       <hr className="horizontal" />
       <p className="text-light text-center mx-5">
-        Desarrollado por: &copy;Fernando Cordova Mendoza
+        Desarrollado por: &copy;Fernando Córdova Mendoza
       </p>
       <hr className="horizontal" />
     </div>
