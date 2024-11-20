@@ -1,9 +1,12 @@
 "use client";
 import { useState } from "react";
 import { redirect } from "next/navigation";
+import * as React from "react";
+
 export default function editar({ params }) {
+  const resolvedParams = React.use(params);
   const storage = JSON.parse(localStorage.getItem("todo"));
-  const tarea = storage[params.id];
+  const tarea = storage[resolvedParams.id];
   const [titulo, setTitulo] = useState(tarea.titulo);
   const [desc, setDesc] = useState(tarea.desc);
   let update = {
@@ -34,9 +37,9 @@ export default function editar({ params }) {
         onClick={() => {
           update.titulo = titulo;
           update.desc = desc;
-          storage.splice(params.id, 1, update);
+          storage.splice(resolvedParams.id, 1, update);
           localStorage.setItem("todo", JSON.stringify(storage));
-          redirect("/tarea/" + params.id);
+          redirect("/tarea/" + resolvedParams.id);
         }}
       >
         ACTUALIZAR
